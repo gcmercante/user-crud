@@ -10,7 +10,7 @@ class ListAllUsersController {
       const { user_id } = request.headers;
 
       if (Array.isArray(user_id)) {
-        return response.status(400).json({ error: "Invalid number of ids" });
+        return response.status(400).json({ error: "Invalid data format" });
       }
 
       const users = this.listAllUsersUseCase.execute({ user_id });
