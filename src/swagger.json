@@ -48,13 +48,16 @@
                       "format": "uuid"
                     },
                     "name": {
-                      "type": "string"
+                      "type": "string",
+                      "example": "John Doe"
                     },
                     "admin": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "example": false
                     },
                     "email": {
-                      "type": "string"
+                      "type": "string",
+                      "example": "johndoe@example.com"
                     },
                     "created_at": {
                       "type": "string",
@@ -70,7 +73,20 @@
             }
           },
           "400": {
-            "description": "Bad request"
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "User already exists!"
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       },
